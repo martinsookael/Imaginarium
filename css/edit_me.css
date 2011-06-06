@@ -95,6 +95,29 @@ border: 0; border-top: 1px solid #dddddd;
 .ui-corner-all { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 */
 
+/* ...fuck me
+
+.ui-button-text-only .ui-button-text {
+    padding: 0.4em 1em;
+}
+
+.ui-button .ui-button-text {
+    display: block;
+    line-height: 1.4;
+}
+
+.ui-button {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    font-weight: normal;
+}
+
+*/
+
 .ui-state-default {
 font-size: 9pt; 
 color: #000000;

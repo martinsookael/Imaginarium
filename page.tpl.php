@@ -11,6 +11,13 @@
 <title><?php print $head_title; ?></title>
 <?php print $styles; ?>
 <?php print $scripts; ?>
+
+<script type="text/javascript" src="http://interruptus.ee/imaginarium/jquery/js/jquery-ui-1.8.10.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://interruptus.ee/imaginarium/jquery/css/edit-me/jquery-ui-1.8.10.custom.css" />
+
+<link rel="stylesheet" type="text/css" href="http://interruptus.ee/imaginarium/edit_me.css" />
+
+
 </head>
 
 
@@ -28,7 +35,6 @@
 	$(function() { // GENERATE BUTTONS FOR TOP STRIPE MENU
 		$( "button, input:submit, a", ".top_stripe_buttons" ).button();
 		$( "a", ".top_stripe_buttons" ).css({ 'padding-top': '3px', 'padding-bottom': '0px'});				
-		//$( "a.gray", ".top_stripe_buttons" ).css({ 'background': '#999999 url(images/ui-bg_flat_100_999999_40x100.png) 50% 50% repeat-x', 'border': '1px solid #999999'});				
 		$( "a", ".top_stripe_buttons" ).click(function() { return false; });
 	});
 </script>
