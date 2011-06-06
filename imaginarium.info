@@ -1,0 +1,13 @@
+name = Imaginarium
+description = Imagine all the people, Living for today
+version = 0.1
+core = 6.x
+engine = phptemplate
+base theme = cmtls_theme
+
+stylesheets[all][] = css/imaginarium.css
+stylesheets[all][] = css/imaginarium_ie.css
+stylesheets[all][] = css/design_declarations.css
+stylesheets[all][] = css/edit_me.css
+stylesheets[all][] = css/edit_me_ie.css
+

@@ -1,0 +1,102 @@
+
+body, textarea {
+font-family: geneva, verdana, Helvetica, san-serif;
+color: #000000;
+font-size: 10pt;
+}
+
+body {
+background-color: #ffffff;
+margin: 0 0 0 0;
+}
+
+/* MAIN COLORS */
+
+h1, 
+a,
+.default_color,
+.navigation li.active a.active
+{
+color: #0066cc;
+}
+
+hr {
+border: 1px solid #cccccc;
+}
+
+.centerfold {
+margin-left: auto; 
+margin-right: auto; 
+margin-top: -27px; /* hides header behind top stripe */
+background: #ffffff;
+padding: 0 20px 15px 20px;
+}
+
+/* WIDTHS */
+
+.content_width { 
+width: 550px; 
+}
+
+.content_plus_navi_with {
+width: 775px; 
+}
+
+
+/* HEADER  */
+
+.header_container {
+min-height: 200px;
+}
+
+.header_image {
+height: 200px; background: url(img/demo/header_background_blue.jpg);
+}
+
+.header_map {
+position:  relative;
+z-index: 2;
+background-color: #ffffff; 
+height: 260px; padding-top: 26px; 
+}
+
+.header_link {
+position:  absolute;
+margin: 40px 0 0 15px;
+padding: 0 15px 0 15px;
+color: #ffffff;
+text-decoration:  none;
+font-size: 2em;
+}
+
+
+/* CONTENT AND NAVIGATION */
+
+div.content_and_navigation {
+margin-top: 25px;
+}
+
+div.navigation {
+float: left;
+width: 200px;
+}
+
+div.content_container {
+float: right;
+}
+
+div.content_container hr {
+border: 0; border-top: 1px solid #dddddd;
+}
+
+/* Override Jquery UI */
+
+/*
+.ui-corner-all { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+*/
+
+.ui-state-default {
+font-size: 9pt; 
+color: #000000;
+font-family: geneva, verdana, Helvetica, san-serif;
+}

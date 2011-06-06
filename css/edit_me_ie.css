@@ -1,0 +1,8 @@
+
+/* MAIN COLORS */
+
+
+.navigation ul li.active a,
+.navigation ul li.active ul li.active a {
+color: #0066cc;
+}
