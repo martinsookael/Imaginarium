@@ -50,7 +50,7 @@ min-height: 200px;
 }
 
 .header_image {
-height: 200px; background: url(img/demo/header_background_blue.jpg);
+height: 200px; background: url(../img/demo/header_background_blue.jpg);
 }
 
 .header_map {
@@ -91,9 +91,9 @@ border: 0; border-top: 1px solid #dddddd;
 
 /* Override Jquery UI */
 
-/*
+
 .ui-corner-all { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
-*/
+
 
 /* ...fuck me
 

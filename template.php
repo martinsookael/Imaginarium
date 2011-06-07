@@ -7,22 +7,22 @@ function imaginarium_preprocess_page(&$vars)
 	
 	/* Lightboxi lisamooduli stiil */
 
-  unset($css['screen']['module']['sites/all/modules/jlightbox/css/jlightbox.css']);
+  //unset($css['screen']['module']['sites/all/modules/jlightbox/css/jlightbox.css']);
  
   /* CT theme stiilid */
 
-  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/reset.css']);
-  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/typography.css']);
-  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/layout.css']);
-  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/edit-form.css']);
+  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/reset.css']);
+  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/typography.css']); // for modalframes
+  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/layout.css']); // for modalframes
+  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/edit-form.css']); // modalframe
   unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/article.css']);
   unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/dashboard.css']);
   unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/map_popup.css']);
   unset($css['screen']['theme']['sites/all/themes/cmtls_theme/facebox/facebox.css']);
 
   //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/jquery.ui/jquery.ui.core.css']);
-  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/jquery.ui/jquery.ui.theme.css']);
-  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/jquery.ui/jquery.ui.datepicker.css']);
+  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/jquery.ui/jquery.ui.theme.css']);
+  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/jquery.ui/jquery.ui.datepicker.css']);
   //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/jquery.ui/jquery.ui.button.css']);
   
   unset($css['screen']['module']['sites/all/modules/cmtls/modules/cmtls_map/css/cmtls_map.css']);
@@ -31,7 +31,7 @@ function imaginarium_preprocess_page(&$vars)
   
   unset($css['all']['module']['modules/node/node.css']);
   unset($css['all']['module']['modules/system/defaults.css']);
-  unset($css['all']['module']['modules/system/system.css']);
+//  unset($css['all']['module']['modules/system/system.css']); // modalframe
   unset($css['all']['module']['modules/system/system-menus.css']);
   unset($css['all']['module']['modules/user/user.css']);
 
@@ -58,7 +58,7 @@ function imaginarium_preprocess_page(&$vars)
 
   /* jälle natuke Drupali lisamoodulite stiile */
   
-  unset($css['all']['module']['sites/all/modules/modalframe/css/modalframe.parent.css']);
+  //unset($css['all']['module']['sites/all/modules/modalframe/css/modalframe.parent.css']);
   unset($css['all']['module']['sites/all/modules/cmtls/modules/cmtls_forum/css/forum.css']);
   unset($css['all']['module']['sites/all/modules/jquery_ui_dialog/css/jquery_ui_dialog-dialog/jquery_ui_dialog.css']);
   unset($css['all']['module']['sites/all/modules/jquery_ui_dialog/css/jquery_ui_dialog.main.css']);
@@ -80,19 +80,19 @@ function imaginarium_preprocess_page(&$vars)
     unset($scripts['module']['sites/all/modules/jlightbox/js/jlightbox.js']);
     unset($scripts['module']['sites/all/modules/og/og.js']);
 	
-    unset($scripts['module']['sites/all/modules/cmtls/js/jquery.contextMenu.js']);
-    unset($scripts['module']['sites/all/modules/cmtls/js/app.js']);
-    unset($scripts['module']['sites/all/modules/cmtls/js/jquery.livequery.min.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/js/jquery.contextMenu.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/js/app.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/js/jquery.livequery.min.js']);
 	
     //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.core.min.js']);
-    unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.widget.min.js']);
-    unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.position.min.js']);
-    unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.mouse.min.js']);
-    unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.resizable.min.js']);
-    unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.draggable.min.js']);
+    //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.widget.min.js']);
+    //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.position.min.js']);
+    //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.mouse.min.js']);
+    //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.resizable.min.js']);
+    //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.draggable.min.js']);
     //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.button.min.js']);
-    unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.dialog.min.js']);
-    unset($scripts['module']['sites/all/modules/modalframe/js/parent.js']);
+    //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.dialog.min.js']);
+    //unset($scripts['module']['sites/all/modules/modalframe/js/parent.js']);
 	
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_article/js/app.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_comment/js/app.js']);
@@ -102,6 +102,17 @@ function imaginarium_preprocess_page(&$vars)
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_problem/js/app.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_stance/js/app.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_filter/js/app.js']);
+
+    //unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_app/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_article/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_event/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_forum/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_gallery/js/context_actions.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_group/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_idea/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_place/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_problem/js/context_actions.js']);
+    unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_stuff/js/context_actions.js']);
 	
     unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.datepicker.min.js']);
     unset($scripts['module']['sites/all/modules/date/date_popup/lib/jquery.timeentry.pack.js']);
