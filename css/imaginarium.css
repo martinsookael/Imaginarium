@@ -260,3 +260,40 @@ text-align:  center;
 background: url(../img/comment_cell_bottom.gif); width: 530px; height: 4px; background-repeat: no-repeat;}
 
 
+/* jQuery UI overrides for modalframe
+-------------------------------------------------------------- */
+#ui-dialog-title-modalframe-container {
+	font-weight: normal;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix { /* modalframe header */
+	background: none transparent;
+	border: none;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.modalframe.ui-draggable {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f2f2f2;
+	border: 3px solid #CCCCCC;
+	color: #000000;
+}
+
+#modalframe-container,
+#modalframe-container.ui-widget-content {
+	background-color: #f2f2f2;
+	border: none;
+}
+
+.ui-dialog.modalframe a.ui-dialog-titlebar-close {
+	top: 30px;
+	right: 25px;
+}
+
+iframe#modalframe-element { /* modalframe content */
+	border: none;
+}
+
+

@@ -11,9 +11,9 @@ function imaginarium_preprocess_page(&$vars)
  
   /* CT theme stiilid */
 
-  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/reset.css']);
-  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/typography.css']); // for modalframes
-  //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/layout.css']); // for modalframes
+  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/reset.css']); // enable if You want Helvetica in modalframes
+  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/typography.css']); // enable if You want Helvetica in modalframes
+  unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/layout.css']); //  modalframe part moved to imaginarium.css
   //unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/edit-form.css']); // modalframe
   unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/article.css']);
   unset($css['screen']['theme']['sites/all/themes/cmtls_theme/styles/dashboard.css']);
@@ -58,7 +58,7 @@ function imaginarium_preprocess_page(&$vars)
 
   /* jälle natuke Drupali lisamoodulite stiile */
   
-  //unset($css['all']['module']['sites/all/modules/modalframe/css/modalframe.parent.css']);
+  //unset($css['all']['module']['sites/all/modules/modalframe/css/modalframe.parent.css']); // modalframe
   unset($css['all']['module']['sites/all/modules/cmtls/modules/cmtls_forum/css/forum.css']);
   unset($css['all']['module']['sites/all/modules/jquery_ui_dialog/css/jquery_ui_dialog-dialog/jquery_ui_dialog.css']);
   unset($css['all']['module']['sites/all/modules/jquery_ui_dialog/css/jquery_ui_dialog.main.css']);
@@ -81,7 +81,7 @@ function imaginarium_preprocess_page(&$vars)
     unset($scripts['module']['sites/all/modules/og/og.js']);
 	
     //unset($scripts['module']['sites/all/modules/cmtls/js/jquery.contextMenu.js']);
-    //unset($scripts['module']['sites/all/modules/cmtls/js/app.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/js/app.js']); // modalframe?
     //unset($scripts['module']['sites/all/modules/cmtls/js/jquery.livequery.min.js']);
 	
     //unset($scripts['module']['sites/all/modules/jquery_ui/jquery.ui/ui/minified/jquery.ui.core.min.js']);
@@ -103,12 +103,12 @@ function imaginarium_preprocess_page(&$vars)
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_stance/js/app.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_filter/js/app.js']);
 
-    //unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_app/js/context_actions.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_app/js/context_actions.js']); // console dependcy error
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_article/js/context_actions.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_event/js/context_actions.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_forum/js/context_actions.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_gallery/js/context_actions.js']);
-    //unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_group/js/context_actions.js']);
+    //unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_group/js/context_actions.js']); // console dependency error
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_idea/js/context_actions.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_place/js/context_actions.js']);
     unset($scripts['module']['sites/all/modules/cmtls/modules/cmtls_problem/js/context_actions.js']);

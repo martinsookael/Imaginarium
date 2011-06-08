@@ -7,7 +7,7 @@
 <html dir="<?php print $language->dir; ?>" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 
 <head>
-<?php print $head; ?>
+<?php print $head; // turn off for faster pageloads ?>
 <title><?php print $head_title; ?></title>
 <?php print $styles; ?>
 
@@ -15,53 +15,25 @@
 
 </head>
 
-<body>
-<div class="top_stripe" >
+<body style="background: url(<?=base_path()?>/sites/all/themes/imaginarium/img/demo/gray_gradient_back.gif) repeat-x;">
 
-	<div class="top_stripe_left">
-		<a href="http://www.communitytools.info" target="_blank" class="no_decoration"><img class="ct_logo" src="<?=base_path()?>/sites/all/themes/imaginarium/img/ct.png" alt="Community Tools logo" /></a>
-		<a href="<?=base_path()?>" class="no_decoration black strong">Imaginaarium</a> - beta
-	</div>
+<?php print $header; // block-imagimodule-0.tpl.php prints top stripe. Ideally it would be here - print $top_stripe; ?>
 
-<script type="text/javascript">
-	$(function() { // GENERATE BUTTONS FOR TOP STRIPE MENU
-		$( "button, input:submit, a", ".top_stripe_buttons" ).button();
-		$( "a", ".top_stripe_buttons" ).css({ 'padding-top': '3px', 'padding-bottom': '0px', 'font-size': '9pt', 'color': '#333333'});				
-		$( "a", ".top_stripe_buttons" ).click(function() { return false; });
-	});
-</script>
-
-	<div class="top_stripe_buttons" >
-		<a href="#" >Foorum</a>	
-		<a href="#" >Galerii</a>	
-		<a href="#" >Videod</a>	
-		<a class="show_map" href="#" >Kaart</a>	
-	</div>
-
-	<div class="top_stripe_right">
-    
-    <?php if($user->uid): ?>
-		<?=$user->name?> <span class="gray small">(</span>
-        <?php print  l(t('Settings'), 'cmtls/'.$cmtls['main_group']->nid.'/member/'.$user->uid, array('attributes' => array('class' => 'gray no_decoration small'))); ?>
-         - 
-        <?php print  l(t('Profile'), 'cmtls/'.$cmtls['main_group']->nid.'/member/'.$user->uid.'/edit/', array('attributes' => array('class' => 'gray no_decoration small modalframe-child'))); ?>
-         - 
-		<?php print l(t('Log out'), 'logout', array('attributes' => array('class' => 'gray no_decoration small modalframe-child'))); ?>         <span class="gray small">)</span>
-        
-	<?php else: ?>
-
-        <?php print l(t('Login'), 'cmtls/login', array('attributes' => array('class' => 'gray no_decoration small modalframe-child'))); ?>
-        -
-        <?php print l(t('Register'), 'cmtls/register', array('attributes' => array('class' => 'gray no_decoration small modalframe-child'))); ?>
-
-    <?php endif; ?>
-        
-	</div>	
-</div>
+<div class="centerfold content_plus_navi_with" >
 
 
-			<?php // print $content; ?>
+		
 
+		<?php print $tabs; ?>
+        <?php print $tabs2; ?>
+        <?php if ($show_messages && $messages): print $messages; endif; ?>
+        <?php print $help; ?>
 
+		<?php  print $content; ?>
+
+         <?php print $footer_message . $footer ?>
+         
+</div><!-- centerfold end -->
+<?php print $closure ?>
 </body>
 </html>

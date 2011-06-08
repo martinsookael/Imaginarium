@@ -11,3 +11,7 @@ stylesheets[all][] = css/design_declarations.css
 stylesheets[all][] = css/edit_me.css
 stylesheets[all][] = css/edit_me_ie.css
 
+regions[content] = Content
+regions[header] = Header
+regions[footer] = Footer
+
