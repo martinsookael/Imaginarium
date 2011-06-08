@@ -1,0 +1,86 @@
+<?php
+/**
+ * Display help and module information
+ * @param path which path of the site we're displaying help
+ * @param arg array that holds the current path as would be returned from arg() function
+ * @return help text for the path
+ */
+
+function imagimodule_help($path, $arg) {
+  $output = '';  //declare your output variable
+  switch ($path) {
+    case "admin/help#imagimodule":
+      $output = '<p>'.  t("Support for CT Imaginarium theme") .'</p>';
+      break;
+  }
+  return $output;
+} // function imagimodule_help
+
+
+
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the imagimodule module
+*/
+function imagimodule_perm() {
+    return array('access imagimodule', 'create imagimodule', 'administer imagimodule');
+} // function imagimodule_perm()
+
+
+
+/**
+ * Implementation of hook_block().
+ * @param string $op one of "list", "view", "save" and "configure"
+ * @param integer $delta code to identify the block
+ * @param array $edit only for "save" operation
+*/
+function imagimodule_block($op = 'list', $delta = 0, $edit = array()) {  
+
+
+  switch ($op) {
+    case 'list':
+      $blocks[0]['info'] = t('Imaginarium - Top Stripe in Header');
+      $blocks[1]['info'] = t('Imaginarium - Navigation');
+      return $blocks;
+    case 'view':
+      switch ($delta) {
+        case 0:
+			// comes from block-imagimodule-0.tpl.php
+          $blocks['subject'] ="top stripe";
+          $blocks['content'] = "top stripe";
+          return $blocks;
+        case 1:
+			// comes from block-imagimodule-1.tpl.php
+          $blocks['subject'] ="navigation";
+          $blocks['content'] = "navigation";
+          return $blocks;
+      }
+   }
+
+
+/*
+
+  if ($op == "list") {
+    // Generate listing of blocks from this module, for the admin/block page
+    $blocks = array();
+    $blocks[0]["info"] = t('Prite the top stripe in header');
+    $blocks[1]["info"] = t('Test 2');
+    return $blocks;
+  } 
+
+  else if ($op == 'view') {
+		// Generate our block content
+					
+		$block['subject'] = t("On This Date");
+		$block['content'] = t("Sorry No Content");
+		
+		// return the built content
+		return $block;
+
+  }
+
+  // return the built content
+  return $block;
+*/
+
+} // function imagimodule_block
