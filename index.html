@@ -1,0 +1,965 @@
+<!DOCTYPE HTML>
+<!-- original html file -->
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Community Tools HTML</title>
+
+<script type="text/javascript" src="jquery/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery-ui-1.8.10.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.autogrow-textarea.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery/css/edit-me/jquery-ui-1.8.10.custom.css" />
+
+<script type="text/javascript" src="js/imaginarium.js"></script>
+<link rel="stylesheet" type="text/css" href="css/imaginarium.css" />
+<link rel="stylesheet" type="text/css" href="css/design_declarations.css" />
+<link rel="stylesheet" type="text/css" href="css/edit_me.css" />
+
+<!--[if IE ]>
+<script type="text/javascript" src="js/imaginarium-ie.js"></script>
+<![endif]-->
+
+
+
+</head>
+<body style="background: url(img/demo/gray_gradient_back.gif) repeat-x;">
+
+<div class="top_stripe" >
+
+	<div class="top_stripe_left">
+		<a href="#" class="no_decoration"><img class="ct_logo" src="img/ct.png" alt="Community Tools logo" /></a>
+		<a href="#" class="no_decoration black strong">Imaginaarium</a> - beta
+	</div>
+
+<script type="text/javascript">
+	$(function() { // GENERATE BUTTONS FOR TOP STRIPE MENU
+		$( "button, input:submit, a", ".top_stripe_buttons" ).button();
+		$( "a", ".top_stripe_buttons" ).css({ 'padding-top': '3px', 'padding-bottom': '0px'});				
+		//$( "a.gray", ".top_stripe_buttons" ).css({ 'background': '#999999 url(images/ui-bg_flat_100_999999_40x100.png) 50% 50% repeat-x', 'border': '1px solid #999999'});				
+		$( "a", ".top_stripe_buttons" ).click(function() { return false; });
+	});
+</script>
+
+	<div class="top_stripe_buttons" >
+		<a href="#" >Foorum</a>	
+		<a href="#" >Galerii</a>	
+		<a href="#" >Videod</a>	
+		<a class="show_map" href="#" >Kaart</a>	
+	</div>
+
+	<div class="top_stripe_right">
+		Martin <a href="#" class="gray no_decoration small">(profiil</a> - <a href="#" class="gray no_decoration small">log out)</a>
+	</div>	
+</div>
+
+<div class="centerfold content_plus_navi_with" >
+
+<script type="text/javascript">
+	$(document).ready(function() { // DISPLAY / HIDE MAP
+			$("a.show_map").click(function(){
+				if ($("div.header_container").find("div.header_map").is(":hidden")) {
+					$('div.header_map').load('map.html', function() {
+						$("div.top_stripe_buttons").find("a.show_map").css({color:"#0066cc"}); // I want to be dynamic!
+						$("div.header_container").find("div.header_map:hidden").slideDown("slow"); 
+						$("div.header_container").find("div.header_image:visible").hide(); 
+					});
+				}
+				else {
+					$("div.header_container").find("div.header_map:visible").slideUp("slow", 
+						function() {
+							$("div.top_stripe_buttons").find("a.show_map").css({color:"#000000"}); // I want to be dynamic!
+							$("div.header_container").find("div.header_image:hidden").slideDown();							$("div.header_container").find("div.header_image:visible").css({postion:"absolute",top:"0"}); // I want to be dynamic!
+					
+						}
+					);				
+				}
+			});
+		});
+
+
+
+
+	$(document).ready(function() { // WIDTHPREVIEW PURPOPSES
+		$( "button, input:submit, a", ".width_demo_area" ).button();
+	
+			$("a.width_870").click(function(){
+				$(".content_plus_navi_with").css({ 'width': '870'}); 
+				$(".content_width").css({ 'width': '650'}); 
+			});
+
+			$("a.width_970").click(function(){
+				$(".content_plus_navi_with").css({ 'width': '970'}); 
+				$(".content_width").css({ 'width': '750'}); 
+			});
+	
+			$("a.width_775").click(function(){
+				$(".content_plus_navi_with").css({ 'width': '775'}); 
+				$(".content_width").css({ 'width': '550'}); 
+			});
+
+			$("a.width_700").click(function(){
+				$(".content_plus_navi_with").css({ 'width': '700'}); 
+				$(".content_width").css({ 'width': '470'}); 
+			});
+
+
+		});
+
+</script>
+
+	<div class="header_container content_plus_navi_with">
+		<div class="header_map hidden content_plus_navi_with" >
+		</div>
+		
+		<div class="header_image content_plus_navi_with" >
+			<a class="header_link" href="#">My great community</a>
+		</div>
+        
+        <div class="width_demo_area margin_left" style="margin-top: -35px;" > <!-- this div is for preview purposes - do not include to code -->
+			<a href="#" class="width_700" >700</a>	
+			<a href="#" class="width_775" >775</a>	
+			<a href="#" class="width_870" >870</a>	
+			<a href="#" class="width_970" >970</a>	
+        	
+        </div>
+	</div><!-- header container end -->
+
+
+	<div class="content_and_navigation content_plus_navi_with">
+	
+		<div class="navigation">
+			<ul class="static_pages">
+				<li><a class="dark_gray" href="#">Front page</a></li>
+				<li><a class="dark_gray" href="#">About</a></li>
+				<li><a class="dark_gray" href="#">Second static page</a></li>
+			</ul>	
+			
+			<hr />
+                <div class="light_gray group_cluster" >Minu grupid:</div>
+			
+			<ul class="group_navi">
+				
+				<li class="group_nr_1" onMouseOver="showOpener(1)" onMouseOut="hideOpener(1)">
+
+					<div class="float_right down_arrow down_arrow_nr_1 hidden" >
+						<a onClick="showTools(1); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_main_group.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					
+					<a class="dark_gray link_for_group_nr_1" href="#"> My great community </a>
+						
+						<ul class="tool_navi_for_group_nr_1 tool_navi hidden">
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_11">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_11">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_11" onClick="editTool(1,11); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+
+								<a class="dark_gray link_for_tool_11" href="#">
+									Poems
+								</a>
+							</li>
+							
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_12">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_12">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_12" onClick="editTool(1,12); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+								<a class="dark_gray link_for_tool_12" href="#">
+									Images, with a very long name
+								</a>
+							</li>
+							
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_13">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_13">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_13" onClick="editTool(1,13); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+								<a class="dark_gray link_for_tool_13" href="#">
+									T-shirts
+								</a>
+							</li>
+							<li>
+								<a class="light_gray" href="#">
+									+ Lisa tööriist
+								</a>
+							</li>
+						</ul>
+				</li>
+
+
+				<li class="active_group">
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_imaginarium.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					<a class="dark_gray" href="#">Imaginaarium</a>
+						<ul class="tool_navi">
+						
+							<li class="active">
+								<div class="float_right margin_right_small edit_buttons_for_tool_21">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_21">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_21" onClick="editTool(2,21); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+
+								<a class="active link_for_tool_21" href="#">
+									Poems
+								</a>
+
+									<ul>
+
+										<li class="active">
+											<div class="float_right margin_right_small edit_buttons_for_tool_201">
+												<div class="hidden tool_editor_dialogue tool_editor_for_tool_201">
+												<!-- filled by editTool -->
+												</div>
+												<a class="no_decoration light_gray" href="#">+</a>
+												<a class="edit_tool_nr_201" onClick="editTool(2,201); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+											</div>
+			
+											<a class="active link_for_tool_201" href="#">
+												Serious
+											</a>
+										</li>
+										
+										<li>
+											<div class="float_right margin_right_small edit_buttons_for_tool_202">
+												<div class="hidden tool_editor_dialogue tool_editor_for_tool_202">
+												<!-- filled by editTool -->
+												</div>
+												<a class="no_decoration light_gray" href="#">+</a>
+												<a class="edit_tool_nr_202" onClick="editTool(2,202); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+											</div>
+			
+											<a class="gray link_for_tool_202" href="#">
+												Happy
+											</a>
+										</li>
+
+										<li>
+											<div class="float_right margin_right_small edit_buttons_for_tool_203">
+												<div class="hidden tool_editor_dialogue tool_editor_for_tool_203">
+												<!-- filled by editTool -->
+												</div>
+												<a class="no_decoration light_gray" href="#">+</a>
+												<a class="edit_tool_nr_203" onClick="editTool(2,203); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+											</div>
+			
+											<a class="gray link_for_tool_203" href="#">
+												Romantic
+											</a>
+										</li>
+									</ul>
+
+							</li>
+
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_22">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_22">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_22" onClick="editTool(2,22); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+
+								<a class="dark_gray link_for_tool_22" href="#">
+									Images
+								</a>
+							</li>
+
+
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_23">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_23">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_23" onClick="editTool(2,23); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+
+								<a class="dark_gray link_for_tool_23" href="#">
+									T-shirts
+								</a>
+							</li>
+
+							<li>
+								<a class="light_gray" href="#">
+									+ Lisa tööriist
+								</a>
+							</li>
+							
+						</ul>
+
+				</li>
+
+				
+	
+				
+
+				<li class="group_nr_4" onMouseOver="showOpener(4)" onMouseOut="hideOpener(4)">
+
+					<div class="float_right down_arrow down_arrow_nr_4 hidden" >
+						<a onClick="showTools(4); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_ct_default.png" class="size_18" alt="icon" />
+						</a>
+					</div>
+					
+					<a class="dark_gray link_for_group_nr_4" href="#"> Third public group </a>
+						
+						<ul class="tool_navi_for_group_nr_4 tool_navi hidden">
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_41">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_41">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_41" onClick="editTool(4,41); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+
+								<a class="dark_gray link_for_tool_41" href="#">
+									Nothing really
+								</a>
+							</li>
+							<li>
+								<a class="light_gray" href="#">
+									+ Lisa tööriist
+								</a>
+							</li>
+						</ul>
+				</li>			
+				
+				
+				<li class="group_nr_5" onMouseOver="showOpener(5)" onMouseOut="hideOpener(5)">
+
+					<div class="float_right down_arrow down_arrow_nr_5 hidden" >
+						<a onClick="showTools(5); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_cabaruptus.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					
+					<a class="dark_gray link_for_group_nr_5" href="#"><img src="img/icon_lock.gif" class="size_10" alt="private" /> Cannot post </a>
+						
+						<ul class="tool_navi_for_group_nr_5 tool_navi hidden">
+							<li>
+								<a class="dark_gray link_for_tool_51" href="#">
+									Poems
+								</a>
+							</li>
+							
+							<li>
+								<a class="dark_gray link_for_tool_52" href="#">
+									Images, with a very long name
+								</a>
+							</li>
+							
+							<li>
+								<a class="dark_gray link_for_tool_53" href="#">
+									T-shirts
+								</a>
+							</li>
+						</ul>
+				</li>				
+				
+				
+				
+				
+
+				
+				<li class="group_nr_6" onMouseOver="showOpener(6)" onMouseOut="hideOpener(6)">
+
+					<div class="float_right down_arrow down_arrow_nr_6 hidden" >
+						<a onClick="showTools(6); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_orgunn.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					
+					<a class="dark_gray link_for_group_nr_6" href="#"><img src="img/icon_lock.gif" class="size_10" alt="private" /> Can post / no admin </a>
+						
+						<ul class="tool_navi_for_group_nr_6 tool_navi hidden">
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_61">
+									<a class="no_decoration light_gray" href="#">+</a>
+								</div>
+
+								<a class="dark_gray link_for_tool_61" href="#">
+									Poems
+								</a>
+							</li>
+							
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_62">
+									<a class="no_decoration light_gray" href="#">+</a>
+								</div>
+								<a class="dark_gray link_for_tool_62" href="#">
+									Images, with a very long name
+								</a>
+							</li>
+							
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_63">
+									<a class="no_decoration light_gray" href="#">+</a>
+									</div>
+								<a class="dark_gray link_for_tool_63" href="#">
+									T-shirts
+								</a>
+							</li>
+						</ul>
+				</li>
+				
+				
+				
+				
+				
+				
+				
+				
+
+				<li class="group_nr_7" onMouseOver="showOpener(7)" onMouseOut="hideOpener(7)">
+
+					<div class="float_right down_arrow down_arrow_nr_7 hidden" >
+						<a onClick="showTools(7); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_paris.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					
+					<a class="dark_gray link_for_group_nr_7" href="#"><img src="img/icon_lock.gif" class="size_10" alt="private" /> Is Admin </a>
+						
+						<ul class="tool_navi_for_group_nr_7 tool_navi hidden">
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_71">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_71">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_71" onClick="editTool(7,71); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+
+								<a class="dark_gray link_for_tool_71" href="#">
+									Poems
+								</a>
+							</li>
+							
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_72">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_72">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_72" onClick="editTool(7,72); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+								<a class="dark_gray link_for_tool_72" href="#">
+									Images, with a very long name
+								</a>
+							</li>
+							
+							<li>
+								<div class="float_right margin_right_small edit_buttons_for_tool_73">
+									<div class="hidden tool_editor_dialogue tool_editor_for_tool_73">
+									<!-- filled by editTool -->
+									</div>
+									<a class="no_decoration light_gray" href="#">+</a>
+									<a class="edit_tool_nr_73" onClick="editTool(7,73); return false;" href="#"><img class="size_10" src="img/icon_edit_gray.gif" alt="edit" /></a>
+								</div>
+								<a class="dark_gray link_for_tool_73" href="#">
+									T-shirts
+								</a>
+							</li>
+							<li>
+								<a class="light_gray" href="#">
+									+ Lisa tööriist
+								</a>
+							</li>
+
+
+						</ul>
+				</li>
+
+			</ul>
+			
+			<hr />
+			<div class="light_gray group_cluster">Teised grupid:</div>
+			
+			<ul class="group_navi">
+				
+				<li class="group_nr_8" onMouseOver="showOpener(8)" onMouseOut="hideOpener(8)">
+
+					<div class="float_right down_arrow down_arrow_nr_8 hidden" >
+						<a onClick="showTools(8); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_nonmember.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					
+					<a class="gray link_for_group_nr_8" href="#"> I'm a nonmember, but since it's a publick group i see it.</a>
+						
+						<ul class="tool_navi_for_group_nr_8 tool_navi hidden">
+							<li>
+								<a class="dark_gray link_for_tool_81" href="#">
+									Poems
+								</a>
+							</li>
+							
+							<li>
+								<a class="dark_gray link_for_tool_82" href="#">
+									Images, with a very long name
+								</a>
+							</li>
+							
+							<li>
+								<a class="dark_gray link_for_tool_83" href="#">
+									T-shirts
+								</a>
+							</li>
+						</ul>
+				</li>				
+
+
+				<li class="group_nr_9" onMouseOver="showOpener(9)" onMouseOut="hideOpener(9)">
+
+					<div class="float_right down_arrow down_arrow_nr_9 hidden" >
+						<a onClick="showTools(9); return false;" href="#"><img src="img/triangle-south.gif" alt="show_group_tools" /></a>
+					</div>
+					
+					<div class="group_icon_container_small">
+						<a href="#" >
+							<img src="img/demo/group_old_town.jpg" class="size_18" alt="icon" />
+						</a>
+					</div>
+					<a class="gray link_for_group_nr_9" href="#"> 2.nd Public Group</a>
+						<ul class="tool_navi_for_group_nr_9 tool_navi hidden">
+							<li>
+								<a class="dark_gray link_for_tool_91" href="#">
+									News
+								</a>
+							</li>
+						</ul>
+				</li>				
+
+			</ul>
+
+			<ul class="static_pages">
+				<li><a class="dark_gray" href="#">Kõik grupid</a></li>
+			</ul>	
+
+
+
+
+		</div>
+		
+		<div class="content_container content_width" >
+
+			<script type="text/javascript">
+				$(function() { // GENERATE BUTTONS FOR CONTENT HEADER CONTROLS
+					$( "button, input:submit, a", ".content_header_controls" ).button();
+					$( "a", ".content_header_controls" ).css({ 'padding-top': '0px', 'padding-bottom': '0px', 'font-size': '8pt'});				
+					$( "a.gray", ".content_header_controls" ).css({ 'background': '#999999', 'border': '1px solid #999999', 'color': '#ffffff'});				
+					$( "a.default", ".content_header_controls" ).css({ 'background': '#0066cc', 'border': '1px solid #0066cc', 'color': '#ffffff'});				
+					$( "a", ".content_header_controls" ).click(function() { return false; });
+				});
+			</script>
+			
+			<div class="content_header_controls float_right">
+				<a href="#" >Lahku</a>	
+				<a href="#" class="gray" >Seaded</a>	
+				<a href="#" class="gray" >Liikmed</a>	
+				<a href="#" class="default" >+ Lisa</a>	
+			</div>
+		
+			<div class="group_icon_container_big float_left">
+				<a href="#"><img src="img/demo/group_imaginaarium_big.jpg" class="size_70" alt="Imaginaarium" /></a>			
+			</div>
+		
+	        <h1><a href="#" class="no_decoration black" >
+	        	Imaginaarium 
+	        </a></h1>
+			
+			<span class="gray">
+				kirjuta, pildista, joonista, luuleta, postita
+			</span>
+		
+			<br />
+						
+			<div class="breadcrumbs" >	
+			<!--		
+					<form>
+						<select>
+							<option value="1" >CI 15 - Marko Kivimäe (12)</option>
+							<option value="1" >CI 13.3 - Marko Kivimäe (6)</option>
+							<option value="1" >CI 6 - Marko Kivimäe (25)</option>
+							<option value="1" >CI 13 - Liisa Täherand (41)</option>
+							<option value="1" >CI 5 - Marko Kivimäe (24)</option>
+							<option value="1" >CI 4 - Marko Kivimäe (20)</option>
+							<option value="1" >CI 4 -Liina Luhats (67)</option>
+						</select>
+						 > IMG_1234.JPG
+					</form>	
+					<div class="clearer"></div>
+			-->
+			</div>	
+
+
+
+				<script type="text/javascript">
+					$(document).ready(function() { // DISPLAY / HIDE MAP
+							$("a.show_map_2").click(function(){
+								if ($("div.node_nr_1_content").find("div.map_container_node_nr_1").is(":hidden")) {
+									$('div.map_container_node_nr_1').load('map_2.html', function() {
+										$("div.node_nr_1_content").find("div.map_container_node_nr_1:hidden").slideDown("slow"); 
+									});
+								}
+								else {
+									$("div.node_nr_1_content").find("div.map_container_node_nr_1:visible").slideUp("slow");				
+								}
+							});
+						});
+				
+				</script>
+
+			
+	  			<div class="size_40 float_left relative"><!-- user avatar -->
+	  				<a href="#">
+						<img src="img/demo/avatar_al.jpg" class="size_40 absolute" alt="avatar" />
+						<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+					</a>
+				</div>
+
+				<div class="float_left margin_left_medium push_up_very_small">	<!-- user and tool name -->				
+					<a href="#" class="black no_decoration">
+						<img src="img/icon_lock.gif" alt="private" class="size_10" />
+						Al Pacino<span class="gray">:</span>
+					</a>
+					<a href="#" class="no_decoration">&nbsp;Müüa</a>
+				</div>
+
+				<div class="float_right gray push_up_very_small" ><!-- metadata & edit -->
+					<a href="#" class="gray no_decoration">link</a> |
+					<a href="#" class="modalframe"><img src="img/icon_edit_gray.gif" alt="edit" class="size_10" /></a> |
+					14. aprill 2010 |
+					<a href="#" class="show_map_2 no_decoration" onClick="return false;" ><img src="img/icon_location.png" alt="location" class="size_14 push_down_very_small" /> Times Square, NY</a>
+				</div>
+			
+				<h2><a href="#" class="no_decoration">&nbsp;Müüa takso, heas korras, kollast värvi</a></h2>
+			
+				<div class="node_nr_1_content darkest_gray margin_top_medium">
+					<div class="map_container_node_nr_1 hidden margin_bottom margin_top">
+					</div>
+					
+					<a href="#"><img class="float_right border_lightest_gray margin_left margin_bottom" alt="yellow_cab.jpg" src="img/demo/yellow_cab.jpg" /></a>
+					
+					Ma pean ütlema, et kui ma seda kõike nägin ja kogesin, siis ma olin pahviks löödud, pehmelt väljendudes.
+					ma hakkasin higistama, muutusin närvilseks, sebisin ringi, ahmisin õhku. kirusin ennast, et piisavalt vene keelt ei mõista.
+					see oli just umbes siis, kui minu kodu miinused mulle selgeks said, just umbes siis kui mõistsin, et minu vahendid ei luba mul seda millegi unistustele vastavama vastu vahetada.
+					laur kaunissaare leitud autojuht, kes meid david garejat vaatama viis, rääkis tagasiteel, et tal on väike kollektsioon, kas tahame näha. paar korda tõi selle tagasihoidlikult teemaks, meie kõik jäime äraootavale...		
+				
+					<br />
+					<a href="#"><img class="border_lightest_gray margin_right_small margin_top_small borderspace size_50" alt="taxi_1.jpg" src="img/demo/taxi_1.jpg" /></a>
+					<a href="#"><img class="border_lightest_gray margin_right_small margin_top_small borderspace size_50" alt="taxi_2.jpg" src="img/demo/taxi_2.jpg" /></a>
+				</div>
+				
+				<div class="comments_container center margin_top_medium">
+					<div class="comment_background_top"></div>
+					<div class="comment_background_middle">
+						
+						<a href="#" class="no_decoration float_left margin_left_medium margin_top_small">8 kommentaari</a>
+						<div class="float_right margin_right_medium margin_top_small">
+							<a href="#" class="no_decoration">Jaga</a> | <a href="#"><img class="push_down_small" src="img/like.gif" alt="like" /></a> 
+						</div>
+						<div class="clearer size_10" ></div>
+						
+
+<script type="text/javascript">
+	$(document).ready(function() {
+			$("a.show_all_comments_1").click(function(){
+					$("a.show_all_comments_1:visible").hide("fast"); 
+					$("a.show_last_5_comments_1:hidden").show("fast"); 
+					$("div.hidden_comments_nr_1:hidden").show(); 
+			});
+
+			$("a.show_last_5_comments_1").click(function(){
+					$("a.show_all_comments_1:hidden").show("fast"); 
+					$("a.show_last_5_comments_1:visible").hide("fast"); 
+					$("div.hidden_comments_nr_1:visible").hide(); 
+			});
+		});
+</script>
+
+
+						<div class="comment_cell_container push_up_small container_for_show_more_comments_1"><!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content_show_all_comments darkest_gray">						
+									<a href="#" onClick="return false;" class="no_decoration show_all_comments_1">
+										-- Näita kõiki kommentaare (3 veel) --
+									</a> 
+									<a href="#" onClick="return false;" class="no_decoration hidden show_last_5_comments_1">
+										-- Näita ainult viimased 5 kommentaari --
+									</a> 
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div> <!-- one commentcell end -->
+
+						<div class="hidden_comments_nr_1 hidden">
+							<div class="comment_cell_container push_up_small"><!-- one commentcell -->
+								<div class="comment_cell_top"></div>
+								<div class="comment_cell_middle">
+									<div class="comment_cell_content darkest_gray">						
+							  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+							  				<a href="#">
+												<img src="img/demo/avatar_nicole.jpg" class="size_40 absolute" alt="avatar" />
+												<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+											</a>
+										</div>
+										<div class="float_right margin_right_small gray">
+											14. aprill 2011 18:57 <a href="#" class="dark_red no_decoration">x</a>
+										</div>
+										<a href="#" class="black no_decoration"><strong>Nicole Kidman:</strong></a><br />
+										3 Pika teksti test <br>
+										Ma pean ütlema, et kui ma seda kõike nägin ja kogesin, siis ma olin pahviks löödud, pehmelt väljendudes. ma hakkasin higistama, muutusin närvilseks, sebisin ringi, ahmisin õhku. kirusin ennast, et piisavalt vene keelt ei mõista. see oli just umbes siis, kui minu kodu miinused mulle selgeks said, just umbes siis kui mõistsin, et minu vahendid ei luba mul seda millegi unistustele vastavama vastu vahetada. laur kaunissaare leitud autojuht, kes meid david garejat vaatama viis, rääkis tagasiteel, et tal on väike kollektsioon, kas tahame näha. paar korda tõi selle tagasihoidlikult teemaks, meie kõik jäime äraootavale...	
+
+									</div>
+								</div>
+								<div class="comment_cell_bottom"></div>
+							</div> <!-- one commentcell end -->
+							<div class="comment_cell_container push_up_small"><!-- one commentcell -->
+								<div class="comment_cell_top"></div>
+								<div class="comment_cell_middle">
+									<div class="comment_cell_content darkest_gray">						
+							  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+							  				<a href="#">
+												<img src="img/demo/avatar_nicole.jpg" class="size_40 absolute" alt="avatar" />
+												<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+											</a>
+										</div>
+										<div class="float_right margin_right_small gray">
+											14. aprill 2011 18:57 <a href="#" class="dark_red no_decoration">x</a>
+										</div>
+										<a href="#" class="black no_decoration"><strong>Nicole Kidman:</strong></a><br />
+										2 
+									</div>
+								</div>
+								<div class="comment_cell_bottom"></div>
+							</div> <!-- one commentcell end -->
+							<div class="comment_cell_container push_up_small"><!-- one commentcell -->
+								<div class="comment_cell_top"></div>
+								<div class="comment_cell_middle">
+									<div class="comment_cell_content darkest_gray">						
+							  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+							  				<a href="#">
+												<img src="img/demo/avatar_nicole.jpg" class="size_40 absolute" alt="avatar" />
+												<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+											</a>
+										</div>
+										<div class="float_right margin_right_small gray">
+											14. aprill 2011 18:57 <a href="#" class="dark_red no_decoration">x</a>
+										</div>
+										<a href="#" class="black no_decoration"><strong>Nicole Kidman:</strong></a><br />
+										1 
+									</div>
+								</div>
+								<div class="comment_cell_bottom"></div>
+							</div> <!-- one commentcell end -->
+						</div><!-- hidden comments end -->
+
+
+
+
+
+
+
+
+
+						<div class="comment_cell_container push_up_small"><!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content darkest_gray">						
+						  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+						  				<a href="#">
+											<img src="img/demo/avatar_nicole.jpg" class="size_40 absolute" alt="avatar" />
+											<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+										</a>
+									</div>
+									<div class="float_right margin_right_small gray">
+										14. aprill 2011 18:57 <a href="#" class="dark_red no_decoration">x</a>
+									</div>
+									<a href="#" class="black no_decoration"><strong>Nicole Kidman:</strong></a><br />
+									Päriselt ka müüd maha või?
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div> <!-- one commentcell end -->
+	
+						<div class="comment_cell_container push_up_small"> <!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content darkest_gray">						
+						  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+						  				<a href="#">
+											<img src="img/demo/avatar_al.jpg" class="size_40 absolute" alt="avatar" />
+											<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+										</a>
+									</div>
+									<div class="float_right margin_right_small gray">
+										14. aprill 2011 18:58 <a href="#" class="dark_red no_decoration">x</a>
+									</div>
+									<a href="#" class="black no_decoration"><strong>Al Pacino:</strong></a><br />
+									Nii on, kullake.	
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div><!-- one commentcell end -->
+	
+						<div class="comment_cell_container push_up_small"> <!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content darkest_gray">						
+						  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+						  				<a href="#">
+											<img src="img/demo/avatar_matt.jpg" class="size_40 absolute" alt="avatar" />
+											<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+										</a>
+									</div>
+									<div class="float_right margin_right_small gray">
+										14. aprill 2011 18:59 <a href="#" class="dark_red no_decoration">x</a>
+									</div>
+									<a href="#" class="black no_decoration"><strong>Matt Damon:</strong></a><br />
+									Kuule, see pilt on Sul täiega photoshopitud. 
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div><!-- one commentcell end -->
+	
+						<div class="comment_cell_container push_up_small"> <!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content darkest_gray">						
+						  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+						  				<a href="#">
+											<img src="img/demo/avatar_al.jpg" class="size_40 absolute" alt="avatar" />
+											<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+										</a>
+									</div>
+									<div class="float_right margin_right_small gray">
+										14. aprill 2011 19:00 <a href="#" class="dark_red no_decoration">x</a>
+									</div>
+									<a href="#" class="black no_decoration"><strong>Al Pacino:</strong></a><br />
+									Nii on. 
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div><!-- one commentcell end -->
+
+						<div class="comment_cell_container push_up_small"> <!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content darkest_gray">						
+						  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+						  				<a href="#">
+											<img src="img/demo/avatar_al.jpg" class="size_40 absolute" alt="avatar" />
+											<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+										</a>
+									</div>
+									<div class="float_right margin_right_small gray">
+										14. aprill 2011 19:00 <a href="#" class="dark_red no_decoration">x</a>
+									</div>
+									<a href="#" class="black no_decoration"><strong>Al Pacino:</strong></a><br />
+									Ostan jalgratta. 
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div><!-- one commentcell end -->
+
+						<div class="comment_cell_container push_up_small"> <!-- one commentcell -->
+							<div class="comment_cell_top"></div>
+							<div class="comment_cell_middle">
+								<div class="comment_cell_content darkest_gray">						
+						  			<div class="size_40 float_left relative margin_right_medium push_up_very_small"><!-- user avatar / same as news header -->
+						  				<a href="#">
+											<img src="img/demo/avatar_al.jpg" class="size_40 absolute" alt="avatar" />
+											<img src="img/40px_avatar_sq.png" class="absolute" alt="avatar_brdrs" />
+										</a>
+									</div>
+									
+							        <pre style="display:none;">$('textarea').autogrow();</pre>
+									<form>
+										<div class="comment_buttons" style="width: 60px; float: right;">
+											<img src="img/demo/test_wysiwg.gif" style="margin-left: 5px;" />
+											<a href="#" onClick="return false;">Save</a>
+										</div>
+										<textarea style="width: 390px; max-width: 390px; height: 40px;"></textarea>
+									</form>
+									<script type='text/javascript'>
+										$( "button, input:submit, a", ".comment_buttons" ).button();
+										$( "button, input:submit, a", ".comment_buttons" ).css({ 'background': '#0066cc', 'border': '1px solid #0066cc', 'color': '#ffffff'});				
+
+									  $(function() {
+									    $('textarea').autogrow();
+									  });
+									</script>
+								</div>
+							</div>
+							<div class="comment_cell_bottom"></div>
+						</div><!-- one commentcell end -->
+	
+	
+	
+					</div>
+					<div class="comment_background_bottom"></div>
+					
+					
+				</div><!-- comments container end -->
+			
+			
+			
+
+
+				<hr />		
+			
+		</div><!-- CONTENT CONTAINER end -->
+	
+		<div class="clearer"></div>
+	
+	</div>
+
+
+</div><!-- centerfold end -->
+
+</body>
+</html>
