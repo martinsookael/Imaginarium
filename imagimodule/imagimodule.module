@@ -57,30 +57,4 @@ function imagimodule_block($op = 'list', $delta = 0, $edit = array()) {
       }
    }
 
-
-/*
-
-  if ($op == "list") {
-    // Generate listing of blocks from this module, for the admin/block page
-    $blocks = array();
-    $blocks[0]["info"] = t('Prite the top stripe in header');
-    $blocks[1]["info"] = t('Test 2');
-    return $blocks;
-  } 
-
-  else if ($op == 'view') {
-		// Generate our block content
-					
-		$block['subject'] = t("On This Date");
-		$block['content'] = t("Sorry No Content");
-		
-		// return the built content
-		return $block;
-
-  }
-
-  // return the built content
-  return $block;
-*/
-
 } // function imagimodule_block
