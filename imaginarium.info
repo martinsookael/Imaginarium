@@ -14,4 +14,7 @@ stylesheets[all][] = css/edit_me_ie.css
 regions[content] = Content
 regions[header] = Header
 regions[footer] = Footer
+regions[headerimage] = Header image
+regions[im_navigation] = Imaginarium main navi
+regions[group_header] = Imaginarium Group header
 

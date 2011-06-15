@@ -141,4 +141,14 @@ function imaginarium_preprocess_page(&$vars)
 
 }
 
+/*
+function imaginarium_regions() {
+   return array(
+        'content' => t('content'),
+        'header' => t('header'),
+        'headerimage' => t('Header image'),
+        'footer' => t('footer')
+   );
+}
+*/
 ?>

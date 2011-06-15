@@ -1,6 +1,0 @@
-; $Id $
-
-name = Imaginarium Module
-description = Support for CT Imaginarium
-core = 6.x
-package = "Imaginarium"
