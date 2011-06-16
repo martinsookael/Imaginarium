@@ -38,8 +38,8 @@
         <?php if ($show_messages && $messages): print $messages; endif; ?>
         <?php print $help; ?>
 
-		<?php  // print $content; // enable me for reality ?>
-		<? include "content_dummy.php"; ?>
+		<?php  print $content; // enable me for reality ?>
+		<? // include "content_dummy.php"; ?>
         
 
          <?php print $footer_message . $footer ?>
