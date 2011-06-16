@@ -10,15 +10,16 @@ Look index.html from it's location.
 
 Installation:
 1. install Community Tools - http://communitytools.info/get-it/download/
-2. move Imaginarium theme to sites/all/themes/
-3. enable Imaginarium and mark as default in Themes
-( 4. unenable "cmtls" from Sections )
-5. go to Blocks:
+2. move /imagimodule to sites/all/modules/imagimodule and enable it.
+3. move everything else to sites/all/themes/
+4. enable Imaginarium and mark as default in Themes
+5. unenable "cmtls" from Sections 
+6. go to Blocks:
 	- move "Imaginarium - Group header" to "Imaginarium Group header" region
 	- move "Imaginarium - Header image + map" to "Header image" region
 	- move "Imaginarium - navigation" to "Imaginarium main navi" region
 	- move "Imaginarium - Top Stripe in Header" to "header" region
-6. move /imagimodule to sites/all/modules/imagimodule and enable it.
+
 
 Businessmodel:
 Sell it as a Drupal theme at a scalable price. 
