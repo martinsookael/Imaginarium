@@ -15,7 +15,7 @@
 
 </head>
 
-<body style="background: url(<?=base_path()?>/sites/all/themes/imaginarium/img/demo/gray_gradient_back.gif) repeat-x;">
+<body class="test" style="background: url(<?=base_path()?>/sites/all/themes/imaginarium/img/demo/gray_gradient_back.gif) repeat-x;">
 
 <?php print $header; // block-imagimodule-0.tpl.php prints top stripe. Ideally it would be here - print $top_stripe; ?>
 
@@ -23,33 +23,24 @@
 
 <?php print $headerimage; // block-imagimodule-2.tpl.php prints header image + map. ?>
 
-<? /* map test
-<div style="position: relative; width: 770px; height: 260px;">
-<div id="map" style="z-index: 10; position: absolute; width: 770px; height: 260px; top:0; left: 0;"><?php print $cmtls['map']['output']; ?></div>
-</div>
-*/ ?>
-
-
-
 	<div class="content_and_navigation content_plus_navi_with">
     
 	<div class="navigation">
-		<?  //print $im_navigation; // block-imagimodule-1.tpl.php prints main navigation ?>
+		<?  print $im_navigation; // block-imagimodule-1.tpl.php prints main navigation ?>
     </div>	
 		
     <div class="content_container content_width" >
 
-	<? //print $group_header; // block-imagimodule-3.tpl.php prints group header ?>
-
-	<? //include "content_dummy.php"; ?>
-
+	<? print $group_header; // block-imagimodule-3.tpl.php prints group header ?>
 
 		<?php print $tabs; ?>
         <?php print $tabs2; ?>
         <?php if ($show_messages && $messages): print $messages; endif; ?>
         <?php print $help; ?>
 
-		<?php   print $content; ?>
+		<?php  // print $content; // enable me for reality ?>
+		<? include "content_dummy.php"; ?>
+        
 
          <?php print $footer_message . $footer ?>
     
